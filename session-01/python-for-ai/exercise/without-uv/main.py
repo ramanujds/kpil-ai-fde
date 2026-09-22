@@ -1,8 +1,8 @@
 """Site Status API -- Day 1, Block 3: Python for AI.
 
 A minimal FastAPI app: two routes, one small piece of synthetic data.
-Fill in the TODOs, then run it -- see walkthrough.md for the exact
-commands.
+Fill in the TODOs, then run it -- see exercise-walkthrough/README.md
+for the exact commands.
 """
 
 from fastapi import FastAPI, HTTPException
