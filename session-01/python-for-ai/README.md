@@ -39,7 +39,6 @@ mindmap
     Environment
       Virtual environments
       Package installation
-      .env and secrets
     Reliability
       Basic error handling
       Friendly failures
@@ -84,7 +83,7 @@ A minimal FastAPI app, `main.py`, with two routes and a couple of `TODO`s to fil
 
 | Route | What it returns | Python concept it practises |
 |---|---|---|
-| `GET /` | A welcome message using a name read from `.env` | Functions, environment variables |
+| `GET /` | A welcome message | Functions |
 | `GET /sites/{site_id}/status` | Status of a synthetic site, or a 404 if unknown | Dict lookup, basic error handling |
 
 The identical exercise exists in two folders:
@@ -113,7 +112,6 @@ By the end of this block, alongside the Lab 2 environment checklist in
 
 - Explain the difference between the `venv` + `pip` workflow and the `uv` workflow
 - Write a small FastAPI route and run it locally
-- Read a configuration value from `.env` instead of hardcoding it
 - Return a clear error (a 404 with a message) instead of letting the app crash
 
 ---

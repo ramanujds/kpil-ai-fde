@@ -30,12 +30,6 @@ tried each `TODO` yourself.
    pip install -r requirements.txt
    ```
 
-4. Copy the example env file and keep the default:
-
-   ```bash
-   cp .env.example .env             # Windows: copy .env.example .env
-   ```
-
 ---
 
 ## Part B: With uv
@@ -47,12 +41,6 @@ tried each `TODO` yourself.
 
    ```bash
    uv sync
-   ```
-
-3. Copy the example env file:
-
-   ```bash
-   cp .env.example .env             # Windows: copy .env.example .env
    ```
 
 ---
@@ -67,7 +55,7 @@ get it working, then copy `main.py` over to the other.
 ```python
 @app.get("/")
 def root():
-    return {"message": f"{APP_NAME} is running"}
+    return {"message": "Kalpataru Site Status API is running"}
 ```
 
 ### 2. The `/sites/{site_id}/status` route
@@ -129,7 +117,6 @@ other folder to confirm both tracks behave identically.
 | `uvicorn: command not found` | Confirm `.venv` is activated (`which uvicorn`), or use `uv run uvicorn ...` |
 | Every route returns `null` | A `TODO` still ends in `pass` -- Python functions return `None` by default |
 | `/sites/site-a/status` returns 404 | Check `site_id.lower()` matches a key in `SITE_STATUS` exactly |
-| Welcome message is missing `APP_NAME` | Confirm `.env` was copied from `.env.example` in that folder |
 
 ---
 

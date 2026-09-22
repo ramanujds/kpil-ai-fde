@@ -1,20 +1,13 @@
 """Site Status API -- Day 1, Block 3: Python for AI.
 
-A minimal FastAPI app: two routes, one small piece of synthetic data,
-one value read from .env. Fill in the TODOs, then run it -- see
-walkthrough.md for the exact commands.
+A minimal FastAPI app: two routes, one small piece of synthetic data.
+Fill in the TODOs, then run it -- see walkthrough.md for the exact
+commands.
 """
 
-import os
-
-from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 
-load_dotenv()
-
-APP_NAME = os.getenv("APP_NAME", "Kalpataru Site Status API")
-
-app = FastAPI(title=APP_NAME)
+app = FastAPI(title="Kalpataru Site Status API")
 
 # Synthetic, in-memory data only -- never real project data.
 SITE_STATUS = {
@@ -26,7 +19,7 @@ SITE_STATUS = {
 
 @app.get("/")
 def root():
-    # TODO: return a dict with a "message" key, including APP_NAME in the text.
+    # TODO: return a dict with a "message" key.
     pass
 
 
