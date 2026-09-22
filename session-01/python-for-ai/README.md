@@ -91,7 +91,8 @@ The identical exercise exists in two folders:
 - [`exercise/without-uv/`](exercise/without-uv/) -- set up with `venv` + `pip`
 - [`exercise/with-uv/`](exercise/with-uv/) -- set up with `uv`
 
-Full steps are in [`walkthrough.md`](walkthrough.md).
+Full steps, one capability at a time, are in
+[`exercise-walkthrough/`](exercise-walkthrough/README.md).
 
 ---
 
