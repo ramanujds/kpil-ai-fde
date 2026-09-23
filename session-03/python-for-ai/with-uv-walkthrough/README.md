@@ -1,9 +1,7 @@
 # Site Status API — With uv — Build Walkthrough
 
-A step-by-step guide to hand-building the reference app in
-[`../solutions/with-uv/`](../solutions/with-uv/README.md): the same Site Status API as the
-[without-uv walkthrough](../without-uv-walkthrough/README.md), set up with `uv` instead
-of `venv` + `pip`.
+A step-by-step guide to hand-building the with-uv reference app: the same Site Status API
+as the without-uv walkthrough, set up with `uv` instead of `venv` + `pip`.
 
 ## What You'll Build
 
@@ -13,29 +11,27 @@ app's code changes here; only how you manage its dependencies and run it does.
 
 ## Who This Is For / Prerequisites
 
-Complete the [without-uv walkthrough](../without-uv-walkthrough/README.md) first. This
-guide assumes you already know what the app does and why (routes, path parameters, the
-`SITE_STATUS` dict, the 404 error handling) and does not re-explain any of it — it covers
-only what's new: `uv`. Confirm `uv` is installed via
-[the environment setup note](../../../session-01/notes/02-setting-up-our-env.md) before starting.
-Budget 15-20 minutes — this is intentionally shorter than the without-uv guide.
+Complete the without-uv walkthrough first. This guide assumes you already know what the
+app does and why (routes, path parameters, the `SITE_STATUS` dict, the 404 error handling)
+and does not re-explain any of it — it covers only what's new: `uv`. Confirm `uv` is
+installed via the environment setup note before starting. Budget 15-20 minutes — this is
+intentionally shorter than the without-uv guide.
 
 ## Steps
 
 | Step | File | What You'll Add | Est. Time |
 |---|---|---|---|
-| 1 | [01-concepts-overview.md](01-concepts-overview.md) | Vocabulary: `pyproject.toml`, lockfile, `uv sync`, `uv run` | 5 min |
-| 2 | [02-project-setup-with-uv.md](02-project-setup-with-uv.md) | `pyproject.toml` + a synced `.venv` | 5 min |
-| 3 | [03-same-app-same-code.md](03-same-app-same-code.md) | The unchanged `main.py`, run via `uv run` | 5 min |
-| 4 | [04-recap-and-exercises.md](04-recap-and-exercises.md) | Review, tradeoffs, practice | 5 min |
+| 1 | 01-concepts-overview.md | Vocabulary: `pyproject.toml`, lockfile, `uv sync`, `uv run` | 5 min |
+| 2 | 02-project-setup-with-uv.md | `pyproject.toml` + a synced `.venv` | 5 min |
+| 3 | 03-same-app-same-code.md | The unchanged `main.py`, run via `uv run` | 5 min |
+| 4 | 04-recap-and-exercises.md | Review, tradeoffs, practice | 5 min |
 
 ## Relationship to the Reference Implementation
 
-By the end of Step 3, your `main.py` should match
-[`../solutions/with-uv/main.py`](../solutions/with-uv/main.py) exactly — which is itself identical to
-[`../solutions/without-uv/main.py`](../solutions/without-uv/main.py) — and your `pyproject.toml` should match
-[`../solutions/with-uv/pyproject.toml`](../solutions/with-uv/pyproject.toml). This walkthrough was generated
-from, and statically checked against, that reference.
+By the end of Step 3, your `main.py` should match the with-uv reference project's file
+exactly — which is itself identical to the without-uv reference project's `main.py` — and
+your `pyproject.toml` should match the with-uv reference project's `pyproject.toml`. This
+walkthrough was generated from, and statically checked against, that reference.
 
 ## Suggested Demo Flow
 
@@ -59,4 +55,4 @@ flowchart LR
     style B fill:#E8752A,color:#ffffff
 ```
 
-Start with [Step 1 — Concepts Overview](01-concepts-overview.md).
+Start with Step 1 — Concepts Overview.

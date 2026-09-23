@@ -1,8 +1,7 @@
 # Site Status API — Without uv — Build Walkthrough
 
-A step-by-step guide to hand-building the reference app in
-[`../solutions/without-uv/`](../solutions/without-uv/README.md): a minimal FastAPI service, set up the
-traditional way with `venv` and `pip`.
+A step-by-step guide to hand-building the without-uv reference app: a minimal FastAPI
+service, set up the traditional way with `venv` and `pip`.
 
 ## What You'll Build
 
@@ -19,29 +18,27 @@ return JSON or a clear error.
 
 Day 3, Block 1 (Python for AI in Practice), Lab 1 (Project Skeleton). Assumes basic Python
 (variables, functions, dicts) and that Python 3.10+ is already installed and confirmed
-working — see
-[Step 1 of the environment setup note](../../../session-01/notes/02-setting-up-our-env.md). No prior
-FastAPI experience required. Budget 30-40 minutes.
+working — see Step 1 of the environment setup note. No prior FastAPI experience required.
+Budget 30-40 minutes.
 
 ## Steps
 
 | Step | File | What You'll Add | Est. Time |
 |---|---|---|---|
-| 1 | [01-concepts-overview.md](01-concepts-overview.md) | Vocabulary: API, route, JSON, virtual environment | 5 min |
-| 2 | [02-environment-setup.md](02-environment-setup.md) | `.venv` + installed packages | 5 min |
-| 3 | [03-first-route.md](03-first-route.md) | `app = FastAPI()` and `GET /` | 5 min |
-| 4 | [04-in-memory-data.md](04-in-memory-data.md) | The `SITE_STATUS` dict | 5 min |
-| 5 | [05-site-status-route.md](05-site-status-route.md) | `GET /sites/{site_id}/status`, happy path | 5 min |
-| 6 | [06-error-handling.md](06-error-handling.md) | A clean 404 for unknown ids | 5 min |
-| 7 | [07-recap-and-exercises.md](07-recap-and-exercises.md) | Review + practice | 10 min |
+| 1 | 01-concepts-overview.md | Vocabulary: API, route, JSON, virtual environment | 5 min |
+| 2 | 02-environment-setup.md | `.venv` + installed packages | 5 min |
+| 3 | 03-first-route.md | `app = FastAPI()` and `GET /` | 5 min |
+| 4 | 04-in-memory-data.md | The `SITE_STATUS` dict | 5 min |
+| 5 | 05-site-status-route.md | `GET /sites/{site_id}/status`, happy path | 5 min |
+| 6 | 06-error-handling.md | A clean 404 for unknown ids | 5 min |
+| 7 | 07-recap-and-exercises.md | Review + practice | 10 min |
 
 ## Relationship to the Reference Implementation
 
-By the end of Step 6, your `main.py` should match
-[`../solutions/without-uv/main.py`](../solutions/without-uv/main.py) exactly, and your `requirements.txt`
-should match [`../solutions/without-uv/requirements.txt`](../solutions/without-uv/requirements.txt). This
-walkthrough was generated from, and statically checked against, that reference — every
-checkpoint has been diffed against the real source file.
+By the end of Step 6, your `main.py` and `requirements.txt` should match the without-uv
+reference project's files exactly. This walkthrough was generated from, and statically
+checked against, that reference — every checkpoint has been diffed against the real
+source file.
 
 ## Suggested Demo Flow
 
@@ -66,4 +63,4 @@ flowchart LR
     style B fill:#E8752A,color:#ffffff
 ```
 
-Start with [Step 1 — Concepts Overview](01-concepts-overview.md).
+Start with Step 1 — Concepts Overview.

@@ -1,6 +1,6 @@
 # Step 4 — Recap and Exercises
 
-> [Back to index](README.md) · Previous: [Same App, Same Code](03-same-app-same-code.md)
+> Back to index · Previous: Same App, Same Code
 
 ## Quick reference
 
@@ -27,7 +27,7 @@
 
 | Gotcha | Why it happens | Fix |
 |---|---|---|
-| `uv: command not found` | `uv` not installed, or terminal not reopened after install | Revisit [the environment setup note](../../../session-01/notes/02-setting-up-our-env.md) |
+| `uv: command not found` | `uv` not installed, or terminal not reopened after install | Revisit the environment setup note |
 | Forgetting `uv run` and typing `uvicorn` directly | Old `venv` habit | Prefix every command with `uv run` in a `uv` project |
 | Confusing `pyproject.toml` with `uv.lock` | Both mention dependencies | `pyproject.toml` is what you edit; `uv.lock` is generated, don't hand-edit it |
 
@@ -46,18 +46,15 @@
    `pyproject.toml` alone.
 2. Add a new dependency (for example `httpx`) to `pyproject.toml` by hand, run `uv sync`,
    and check that `uv.lock` picked up an exact version for it.
-3. Repeat exercises 1-3 from
-   [the without-uv recap](../without-uv-walkthrough/07-recap-and-exercises.md) here —
-   confirm the same code changes work unchanged under `uv run`.
+3. Repeat exercises 1-3 from the without-uv recap here — confirm the same code changes
+   work unchanged under `uv run`.
 4. Time yourself setting up this project from an empty folder with `uv`, then time the
    without-uv setup from scratch in a separate folder. Compare.
-5. Rebuild `pyproject.toml` from memory in a new folder, then diff it against
-   [../solutions/with-uv/pyproject.toml](../solutions/with-uv/pyproject.toml).
+5. Rebuild `pyproject.toml` from memory in a new folder, then diff it against the with-uv
+   reference project's file.
 
 ## What's next
 
 Both Site Status API variants are done. The `uv` workflow here is the same one from Day 1's
-environment checklist in
-[`session-01/notes/02-setting-up-our-env.md`](../../../session-01/notes/02-setting-up-our-env.md)
-— you'll reuse it for the rest of today's build: the LLM client, structured outputs and
-function calling.
+environment checklist — you'll reuse it for the rest of today's build: the LLM client,
+structured outputs and function calling.

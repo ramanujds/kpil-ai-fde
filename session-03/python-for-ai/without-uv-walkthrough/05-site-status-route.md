@@ -1,6 +1,6 @@
 # Step 5 — Site Status Route
 
-> [Back to index](README.md) · Previous: [In-Memory Data](04-in-memory-data.md) · Next: [Error Handling](06-error-handling.md)
+> Back to index · Previous: In-Memory Data · Next: Error Handling
 
 ## Goal
 
@@ -87,4 +87,4 @@ lookup with something that fails cleanly.
 | `site_id` argument name doesn't match the path | Function parameter must match the `{...}` name in the decorator | Keep both spelled `site_id` |
 | Server didn't pick up the new route | Uvicorn wasn't started with `--reload` | Restart with `uvicorn main:app --reload`, or save the file again |
 
-Next: **[Step 6 — Error Handling](06-error-handling.md)**.
+Next: **Step 6 — Error Handling**.

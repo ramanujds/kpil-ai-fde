@@ -1,6 +1,6 @@
 # Step 3 — Same App, Same Code
 
-> [Back to index](README.md) · Previous: [Project Setup With uv](02-project-setup-with-uv.md) · Next: [Recap and Exercises](04-recap-and-exercises.md)
+> Back to index · Previous: Project Setup With uv · Next: Recap and Exercises
 
 ## Goal
 
@@ -43,7 +43,7 @@ def get_site_status(site_id: str):
     return site
 ```
 
-If you built [the without-uv version](../without-uv-walkthrough/06-error-handling.md),
+If you built the without-uv version,
 this is exactly the file you already wrote — for the routes, the dict, and the error
 handling, see that walkthrough's Steps 3 through 6; nothing here is new Python.
 
@@ -118,7 +118,7 @@ def get_site_status(site_id: str):
 
 </details>
 
-This matches [../solutions/with-uv/main.py](../solutions/with-uv/main.py) exactly.
+This matches the with-uv reference project's `main.py` exactly.
 
 ## Common mistakes
 
@@ -126,6 +126,6 @@ This matches [../solutions/with-uv/main.py](../solutions/with-uv/main.py) exactl
 |---|---|---|
 | `uv run uvicorn` says it can't find `uvicorn` | `uv sync` (Step 2) wasn't run first, or `pyproject.toml` doesn't list `uvicorn[standard]` | Re-run `uv sync`, then retry |
 | Habit of running `uvicorn main:app --reload` directly | That uses whatever Python is on your system `PATH`, not this project's `.venv` | Always prefix with `uv run` in a `uv`-managed project |
-| Responses differ from the without-uv version | `main.py` was retyped instead of copied and drifted | Diff against [../solutions/with-uv/main.py](../solutions/with-uv/main.py) |
+| Responses differ from the without-uv version | `main.py` was retyped instead of copied and drifted | Diff against the with-uv reference project's `main.py` |
 
-Next: **[Step 4 — Recap and Exercises](04-recap-and-exercises.md)**.
+Next: **Step 4 — Recap and Exercises**.

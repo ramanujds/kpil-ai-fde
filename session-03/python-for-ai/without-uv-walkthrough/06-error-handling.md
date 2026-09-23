@@ -1,6 +1,6 @@
 # Step 6 — Error Handling
 
-> [Back to index](README.md) · Previous: [Site Status Route](05-site-status-route.md) · Next: [Recap and Exercises](07-recap-and-exercises.md)
+> Back to index · Previous: Site Status Route · Next: Recap and Exercises
 
 ## Goal
 
@@ -90,7 +90,7 @@ def get_site_status(site_id: str):
 
 </details>
 
-This matches [../solutions/without-uv/main.py](../solutions/without-uv/main.py) exactly.
+This matches the without-uv reference project's `main.py` exactly.
 
 ## Common mistakes
 
@@ -100,4 +100,4 @@ This matches [../solutions/without-uv/main.py](../solutions/without-uv/main.py) 
 | `NameError: HTTPException is not defined` | Import line wasn't updated | `from fastapi import FastAPI, HTTPException` |
 | `404` response has an empty `detail` | `HTTPException` raised without `detail=` | Always pass a `detail=` message |
 
-Next: **[Step 7 — Recap and Exercises](07-recap-and-exercises.md)**.
+Next: **Step 7 — Recap and Exercises**.

@@ -1,6 +1,6 @@
 # Step 4 — In-Memory Data
 
-> [Back to index](README.md) · Previous: [First Route](03-first-route.md) · Next: [Site Status Route](05-site-status-route.md)
+> Back to index · Previous: First Route · Next: Site Status Route
 
 ## Goal
 
@@ -85,4 +85,4 @@ def read_root():
 | `python3 -c` command fails to import `main` | Not running the command from the folder containing `main.py` | `cd` into the project folder first |
 | Typo in a key you'll need next step | `kpil-01` vs `kpil_01` vs `KPIL-01` | Keep ids lowercase with hyphens, consistently |
 
-Next: **[Step 5 — Site Status Route](05-site-status-route.md)**.
+Next: **Step 5 — Site Status Route**.

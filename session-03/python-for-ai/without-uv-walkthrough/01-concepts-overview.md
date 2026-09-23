@@ -1,6 +1,6 @@
 # Step 1 — Concepts Overview
 
-> [Back to index](README.md) · Next: [Environment Setup](02-environment-setup.md)
+> Back to index · Next: Environment Setup
 
 ## Goal
 
@@ -33,4 +33,4 @@ recognise it everywhere else it shows up.
 
 With that vocabulary in hand, Step 2 sets up an isolated environment for the project.
 
-Next: **[Step 2 — Environment Setup](02-environment-setup.md)**.
+Next: **Step 2 — Environment Setup**.

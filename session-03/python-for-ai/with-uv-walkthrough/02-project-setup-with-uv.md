@@ -1,12 +1,12 @@
 # Step 2 — Project Setup With uv
 
-> [Back to index](README.md) · Previous: [Concepts Overview](01-concepts-overview.md) · Next: [Same App, Same Code](03-same-app-same-code.md)
+> Back to index · Previous: Concepts Overview · Next: Same App, Same Code
 
 ## Goal
 
 Create `pyproject.toml` and let `uv sync` create the virtual environment and install
 dependencies — compare directly against
-[Step 2 of the without-uv walkthrough](../without-uv-walkthrough/02-environment-setup.md),
+Step 2 of the without-uv walkthrough,
 which did the same job in five manual steps.
 
 ## Why this matters
@@ -78,14 +78,14 @@ dependencies = [
 
 </details>
 
-This matches [../solutions/with-uv/pyproject.toml](../solutions/with-uv/pyproject.toml) exactly.
+This matches the with-uv reference project's `pyproject.toml` exactly.
 
 ## Common mistakes
 
 | Symptom | Cause | Fix |
 |---|---|---|
-| `uv: command not found` | `uv` isn't installed, or the terminal wasn't reopened after installing | See the install step in [the environment setup note](../../../session-01/notes/02-setting-up-our-env.md) |
+| `uv: command not found` | `uv` isn't installed, or the terminal wasn't reopened after installing | See the install step in the environment setup note |
 | `uv sync` fails on a syntax error | A typo in `pyproject.toml`'s TOML syntax (e.g. missing comma in the dependencies list) | Match the checkpoint above exactly |
 | Old habit: manually creating and activating `.venv` | Muscle memory from the without-uv walkthrough | Skip it — `uv sync` and `uv run` handle the venv for you |
 
-Next: **[Step 3 — Same App, Same Code](03-same-app-same-code.md)**.
+Next: **Step 3 — Same App, Same Code**.

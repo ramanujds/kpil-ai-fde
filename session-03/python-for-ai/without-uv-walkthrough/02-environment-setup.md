@@ -1,6 +1,6 @@
 # Step 2 — Environment Setup
 
-> [Back to index](README.md) · Previous: [Concepts Overview](01-concepts-overview.md) · Next: [First Route](03-first-route.md)
+> Back to index · Previous: Concepts Overview · Next: First Route
 
 ## Goal
 
@@ -75,7 +75,7 @@ uvicorn[standard]
 
 </details>
 
-This matches [../solutions/without-uv/requirements.txt](../solutions/without-uv/requirements.txt) exactly.
+This matches the without-uv reference project's `requirements.txt` exactly.
 
 ## Common mistakes
 
@@ -85,4 +85,4 @@ This matches [../solutions/without-uv/requirements.txt](../solutions/without-uv/
 | `python3: command not found` | System uses `python` instead of `python3` | Try `python -m venv .venv` instead |
 | Prompt never shows `(.venv)` | Activation script wasn't sourced correctly | Re-run the exact activate command for your shell/OS from step 3 |
 
-Next: **[Step 3 — First Route](03-first-route.md)**.
+Next: **Step 3 — First Route**.

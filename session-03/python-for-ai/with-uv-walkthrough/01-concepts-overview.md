@@ -1,11 +1,11 @@
 # Step 1 — Concepts Overview
 
-> [Back to index](README.md) · Next: [Project Setup With uv](02-project-setup-with-uv.md)
+> Back to index · Next: Project Setup With uv
 
 ## Goal
 
 Learn the handful of `uv`-specific terms you need, on top of what you already learned
-building [the without-uv version](../without-uv-walkthrough/01-concepts-overview.md).
+building the without-uv version.
 
 ## Why this matters
 
@@ -29,4 +29,4 @@ swap that layer without touching a single line of `main.py`.
 
 With that vocabulary, Step 2 sets up the project with `uv` instead of `venv` + `pip`.
 
-Next: **[Step 2 — Project Setup With uv](02-project-setup-with-uv.md)**.
+Next: **Step 2 — Project Setup With uv**.

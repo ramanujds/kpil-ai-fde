@@ -1,6 +1,6 @@
 # Step 3 — First Route
 
-> [Back to index](README.md) · Previous: [Environment Setup](02-environment-setup.md) · Next: [In-Memory Data](04-in-memory-data.md)
+> Back to index · Previous: Environment Setup · Next: In-Memory Data
 
 ## Goal
 
@@ -80,4 +80,4 @@ def read_root():
 | Running `python main.py` does nothing | `main.py` defines the app but never starts a server itself | Always run it via `uvicorn main:app --reload`, not directly |
 | `address already in use` | A previous `uvicorn` process from an earlier attempt is still running | Stop it (`Ctrl+C` in its terminal), or run with `--port 8001` |
 
-Next: **[Step 4 — In-Memory Data](04-in-memory-data.md)**.
+Next: **Step 4 — In-Memory Data**.
