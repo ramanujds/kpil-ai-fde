@@ -9,7 +9,7 @@ Get the vocabulary straight before touching any code, so the steps that follow r
 
 ## Why this matters
 
-Every AI tool you'll build later in this program — an LLM API wrapper on Day 1, a RAG
+Every AI tool you'll build in this program — the LLM API calls later today, a RAG
 lookup on Day 4, an agent "tool" on Day 5 — takes the same basic shape: **receive a
 request, do a small piece of work, return structured data or a clear error.** A web API
 is the simplest possible version of that shape, with no LLM involved yet, which is exactly

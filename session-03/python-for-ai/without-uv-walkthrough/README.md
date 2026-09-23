@@ -17,9 +17,10 @@ return JSON or a clear error.
 
 ## Who This Is For / Prerequisites
 
-Day 1, Block 3 (Python for AI), Lab 2 (Environment Setup). Assumes basic Python (variables,
-functions, dicts) and that Python 3.10+ is already installed and confirmed working — see
-[Step 1 of the environment setup note](../../notes/02-setting-up-our-env.md). No prior
+Day 3, Block 1 (Python for AI in Practice), Lab 1 (Project Skeleton). Assumes basic Python
+(variables, functions, dicts) and that Python 3.10+ is already installed and confirmed
+working — see
+[Step 1 of the environment setup note](../../../session-01/notes/02-setting-up-our-env.md). No prior
 FastAPI experience required. Budget 30-40 minutes.
 
 ## Steps

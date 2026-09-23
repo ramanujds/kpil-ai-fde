@@ -32,7 +32,7 @@
 3. Why is `site_id` typed as `str` in the function signature? What would break if a site
    id could also be written as a plain number?
 4. Compare this `venv` + `pip` setup to the `uv` setup in
-   [`session-01/notes/02-setting-up-our-env.md`](../../notes/02-setting-up-our-env.md).
+   [`session-01/notes/02-setting-up-our-env.md`](../../../session-01/notes/02-setting-up-our-env.md).
    Which manual steps did `uv` remove?
 
 ## Exercises

@@ -27,7 +27,7 @@
 
 | Gotcha | Why it happens | Fix |
 |---|---|---|
-| `uv: command not found` | `uv` not installed, or terminal not reopened after install | Revisit [the environment setup note](../../notes/02-setting-up-our-env.md) |
+| `uv: command not found` | `uv` not installed, or terminal not reopened after install | Revisit [the environment setup note](../../../session-01/notes/02-setting-up-our-env.md) |
 | Forgetting `uv run` and typing `uvicorn` directly | Old `venv` habit | Prefix every command with `uv run` in a `uv` project |
 | Confusing `pyproject.toml` with `uv.lock` | Both mention dependencies | `pyproject.toml` is what you edit; `uv.lock` is generated, don't hand-edit it |
 
@@ -56,6 +56,8 @@
 
 ## What's next
 
-Both Site Status API variants are done. From here, Lab 2's environment checklist in
-[`session-01/notes/02-setting-up-our-env.md`](../../notes/02-setting-up-our-env.md)
-carries the same `uv` workflow forward into the rest of the program.
+Both Site Status API variants are done. The `uv` workflow here is the same one from Day 1's
+environment checklist in
+[`session-01/notes/02-setting-up-our-env.md`](../../../session-01/notes/02-setting-up-our-env.md)
+— you'll reuse it for the rest of today's build: the LLM client, structured outputs and
+function calling.

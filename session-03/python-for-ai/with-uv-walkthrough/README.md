@@ -17,7 +17,7 @@ Complete the [without-uv walkthrough](../without-uv-walkthrough/README.md) first
 guide assumes you already know what the app does and why (routes, path parameters, the
 `SITE_STATUS` dict, the 404 error handling) and does not re-explain any of it — it covers
 only what's new: `uv`. Confirm `uv` is installed via
-[the environment setup note](../../notes/02-setting-up-our-env.md) before starting.
+[the environment setup note](../../../session-01/notes/02-setting-up-our-env.md) before starting.
 Budget 15-20 minutes — this is intentionally shorter than the without-uv guide.
 
 ## Steps

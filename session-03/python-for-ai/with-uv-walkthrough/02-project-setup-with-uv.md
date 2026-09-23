@@ -15,8 +15,8 @@ In the without-uv walkthrough, you had to: create a folder, create a venv, activ
 write `requirements.txt`, then `pip install`. With `uv`, one file plus one command does
 all of that. This isn't a different tool for a different job — it's the same job, with the
 manual bookkeeping (did you activate? did you `pip freeze` after installing?) removed.
-That gap is exactly what makes `uv` worth introducing on Day 1, before you're managing
-dependencies for LLM SDKs and agent frameworks later in the program.
+That gap is exactly what makes `uv` worth nailing down now, before this project grows into
+the LLM client, structured outputs and function calling you'll add to it later today.
 
 ## 1. Create the project folder
 
@@ -84,7 +84,7 @@ This matches [../solutions/with-uv/pyproject.toml](../solutions/with-uv/pyprojec
 
 | Symptom | Cause | Fix |
 |---|---|---|
-| `uv: command not found` | `uv` isn't installed, or the terminal wasn't reopened after installing | See the install step in [the environment setup note](../../notes/02-setting-up-our-env.md) |
+| `uv: command not found` | `uv` isn't installed, or the terminal wasn't reopened after installing | See the install step in [the environment setup note](../../../session-01/notes/02-setting-up-our-env.md) |
 | `uv sync` fails on a syntax error | A typo in `pyproject.toml`'s TOML syntax (e.g. missing comma in the dependencies list) | Match the checkpoint above exactly |
 | Old habit: manually creating and activating `.venv` | Muscle memory from the without-uv walkthrough | Skip it — `uv sync` and `uv run` handle the venv for you |
 
