@@ -68,6 +68,9 @@ session-01/
   blocks. Explain ideas with stories, relatable everyday examples (phone autocomplete, spam
   email, site reports), tables and Mermaid diagrams. Notes are slide-style: one idea per
   block between `---` lines.
+- **Keep notes concise.** Trim optional/repeating slides (myths, quick-check questions, extra
+  recap slides) rather than including them by default — pad only if the user asks for more
+  depth.
 - **Do not add coding examples unless the user asks.** By default, teach with simple examples
   the reader can try without code: a local model (Ollama chat), or a website that lets them
   visualise the idea (tokenizer sites, Embedding Projector, Transformer Explainer). Put these
@@ -91,9 +94,10 @@ in this order:
    matching runnable Python goes in `code/` and is linked from the note. Code uses only the
    toolchain named in the course doc (see Toolchain below).
 5. **Walkthrough** — step through what the example does and why, tied to the concept above.
-6. **Use case / when to reach for this** — a short, realistic scenario (Kalpataru-relevant
-   where plausible: project reporting, procurement, contracts/tenders, site/service tickets —
-   see Day 6's indicative use cases) showing why this matters in practice.
+6. **Use case / when to reach for this** — a short, realistic scenario showing why this
+   matters in practice. Keep it generic by default; only make it Kalpataru-specific
+   (project reporting, procurement, contracts/tenders, site/service tickets — see Day 6's
+   indicative use cases) when the user explicitly asks for a Kalpataru-relevant example.
 7. **Lab tie-in**, if the schedule names a lab for this block — what the trainee should be able
    to do hands-on by the end.
 
@@ -142,6 +146,14 @@ flowchart LR
 
 ## Ground rules that apply to every example you write
 
+- **No markdown links (`[text](path)`) to other files or folders, anywhere in this repo.**
+  This applies even within one generated set of files (a walkthrough's own index-to-step
+  links, previous/next breadcrumbs, "matches ../file.py exactly" notes) — files and folders
+  in this repo get moved and renamed often, and every link is a latent inconsistency when
+  that happens. If content spans multiple files, order or reference them by name in prose
+  ("see Step 2"), not by hyperlink. This overrides the default multi-file, cross-linked
+  output shape of the app-walkthrough skill — use it for structure and content, not for its
+  linking convention.
 - No real API keys or secrets in any file — use `.env` + `.env.example` patterns, never commit
   actual keys.
 - Only synthetic or sanitized data in examples and datasets — never real Kalpataru project,

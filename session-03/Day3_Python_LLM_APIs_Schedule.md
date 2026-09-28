@@ -14,24 +14,22 @@ From a first API call to a working LLM-powered utility app.
 ```mermaid
 mindmap
   root((Day 3<br/>Python + LLM APIs))
-    Python for AI
-      Project structure
-      Configuration and secrets
-      JSON handling
+    Python Setup
+      Project and uv
+      Secrets in .env
+      JSON and Pydantic basics
     API Calls
-      Authentication
+      Key and request
       Messages and parameters
-      Token usage
-      Rate limits and retries
+      Tokens and common errors
     Structured Outputs
-      Output schemas
-      Validation
+      Ask for JSON
+      Validate the result
     Function Calling
-      Tool definitions
-      Executing functions
-    Integration
-      Utility app
-      Logging and cost control
+      One tool
+      Run and return result
+    Utility App
+      Combine the pieces
 ```
 
 ---
@@ -44,14 +42,14 @@ gantt
     dateFormat HH:mm
     axisFormat %H:%M
     section Opening
-    Kickoff and Day 1 recap         :a1, 09:30, 15m
+    Kickoff and Day 1 recap         :a1, 09:30, 10m
     section Foundations
-    Python for AI in practice       :a2, after a1, 35m
-    API calls and authentication    :a3, after a2, 40m
+    Python for AI in practice       :a2, after a1, 40m
+    API calls and authentication    :a3, after a2, 50m
     Break                           :crit, a4, after a3, 15m
     section Core Capabilities
-    Structured outputs              :a5, after a4, 45m
-    Function calling                :a6, after a5, 45m
+    Structured outputs              :a5, after a4, 40m
+    Function calling                :a6, after a5, 40m
     section Build
     Integration and utility app     :a7, after a6, 35m
     section Close
@@ -60,74 +58,72 @@ gantt
 
 | Time | Duration | Topic Block | Type |
 |---|---|---|---|
-| 00:00 to 00:15 | 15 min | Kickoff and Day 1 recap | Intro |
-| 00:15 to 00:50 | 35 min | 1. Python for AI in Practice | Learn + Apply |
-| 00:50 to 01:30 | 40 min | 2. API Calls and Authentication | Learn + Apply |
-| 01:30 to 01:45 | 15 min | Break | |
-| 01:45 to 02:30 | 45 min | 3. Structured Outputs | Learn + Apply |
-| 02:30 to 03:15 | 45 min | 4. Function Calling | Learn + Apply |
+| 00:00 to 00:10 | 10 min | Kickoff and Day 1 recap | Intro |
+| 00:10 to 00:50 | 40 min | 1. Python for AI in Practice | Learn + Apply |
+| 00:50 to 01:40 | 50 min | 2. API Calls and Authentication | Learn + Apply |
+| 01:40 to 01:55 | 15 min | Break | |
+| 01:55 to 02:35 | 40 min | 3. Structured Outputs | Learn + Apply |
+| 02:35 to 03:15 | 40 min | 4. Function Calling | Learn + Apply |
 | 03:15 to 03:50 | 35 min | 5. Integration and Utility App | Apply |
 | 03:50 to 04:00 | 10 min | Wrap-up and exit check | Reflect |
 
 Clock times are indicative and can be shifted; Batch 2 follows the same durations.
 
+**Pacing note:** most participants are new to AI and many are new to coding. Each block is one main idea. The trainer live-codes the first pass, and every lab starts from provided starter code, so trainees fill in the key lines instead of writing files from scratch. Anything that does not fit in a block is dropped, not rushed (see Deferred Topics below).
+
 ---
 
 ## Topics Covered
 
-### Kickoff and Day 1 Recap (15 min)
+### Kickoff and Day 1 Recap (10 min)
 
 1. Day 3 objectives
-2. Recap of Day 1: prompt patterns, environment and first API call
-3. Environment check for anyone who needs it
+2. Recap of Day 1: prompt patterns and what an API is
+3. Environment check for anyone who needs it (Python, VS Code, uv, model access)
 
-### Block 1: Python for AI in Practice (35 min)
+### Block 1: Python for AI in Practice (40 min)
 
-1. Project structure for an AI application
-2. Packages and dependency management
-3. Configuration and secrets handling
-4. Working with JSON in depth
-5. HTTP basics
-6. Error handling and logging
+1. Project structure for a small AI application
+2. Packages with uv
+3. Configuration and secrets in a .env file
+4. JSON: reading and writing it as Python dicts
+5. Pydantic basics: describing the shape of data once
+6. HTTP basics: request, response, status codes (concept only)
 
 **Lab 1:** Project skeleton
 
-### Block 2: API Calls and Authentication (40 min)
+### Block 2: API Calls and Authentication (50 min)
 
 1. Request and response anatomy
-2. Authentication methods and key management
-3. Messages, roles and model parameters
+2. API keys and keeping them safe
+3. Messages, roles and the main model parameters (model, temperature, max tokens)
 4. Token usage and cost awareness
-5. Rate limits, retries and backoff
-6. Building a reusable client across providers
+5. When calls fail: wrong key, rate limit, timeout, and one simple retry
 
-**Lab 2:** Reusable LLM client
+**Lab 2:** First LLM call and a small reusable helper function
 
-### Block 3: Structured Outputs (45 min)
+### Block 3: Structured Outputs (40 min)
 
 ```mermaid
 flowchart LR
-    A["Prompt with<br/>output format"] --> B["Model response"] --> C["Parse"] --> D["Validate"] --> E["Use in application"]
-    D -->|"Invalid"| F["Retry or repair"]
-    F --> B
+    A["Prompt with<br/>output format"] --> B["Model response"] --> C["Parse and<br/>validate"] --> D["Use in application"]
+    C -->|"Invalid"| E["Retry once"]
+    E --> B
 
     style A fill:#5B4A9E,color:#ffffff
     style B fill:#1F5F8B,color:#ffffff
-    style C fill:#0E9AA7,color:#ffffff
-    style D fill:#E8752A,color:#ffffff
-    style E fill:#0F2C4C,color:#ffffff
+    style C fill:#E8752A,color:#ffffff
+    style D fill:#0F2C4C,color:#ffffff
 ```
 
 1. Why applications need structured output
-2. Requesting JSON and defining output schemas
-3. Provider features for structured output
-4. Validating responses
-5. Handling malformed or incomplete output
-6. Retry and repair strategies
+2. Asking for JSON and describing the schema with Pydantic
+3. Validating the response
+4. What to do when the output is malformed: one retry
 
 **Lab 3:** Structured extraction
 
-### Block 4: Function Calling (45 min)
+### Block 4: Function Calling (40 min)
 
 ```mermaid
 flowchart LR
@@ -142,28 +138,42 @@ flowchart LR
 ```
 
 1. What function calling is and why it matters
-2. Defining functions for the model
-3. How the model decides to call a function
-4. Executing functions and returning results
-5. Error paths and safe execution
-6. Bridge to agents on Day 5
+2. Describing one function to the model
+3. How the model decides to call it
+4. Running the function and returning the result to the model
+5. Bridge to agents on Day 5
 
-**Lab 4:** Function calling
+**Lab 4:** Function calling with one tool
 
 ### Block 5: Integration and Utility App (35 min)
 
-1. Bringing client, structured output and function calling together
-2. Application flow and configuration
-3. Logging and cost control
-4. Basic testing of LLM features
+1. Putting the helper, structured output and function calling together
+2. Application flow, following provided starter code
+3. Printing token usage per call (simple cost awareness)
 
 **Lab 5:** LLM-powered utility app
 
 ### Wrap-up and Exit Check (10 min)
 
-1. Exit check on API calls, structured outputs and function calling
+1. Short exit check on API calls, structured outputs and function calling
 2. Show and tell of utility apps
 3. Day 4 preview
+
+---
+
+## Deferred Topics
+
+These appeared in an earlier draft of this schedule. They are too much for a first day with a new audience and are moved to self-study or later days.
+
+| Topic | Where It Goes |
+|---|---|
+| Reusable client across several providers | Not covered; one provider or one OpenAI-compatible endpoint is enough |
+| Exponential backoff and advanced rate-limit handling | Self-study; Block 2 covers one simple retry |
+| Provider-specific structured output features, repair strategies | Self-study; Block 3 covers validate and retry once |
+| Multiple functions, error paths, safe execution | Day 5 (agents) |
+| Logging setup and cost controls | Self-study; token printing only today |
+| Testing of LLM features | Self-study |
+| Packages and dependency management in depth | Covered only as far as uv basics |
 
 ---
 
@@ -172,9 +182,9 @@ flowchart LR
 | Output | Block |
 |---|---|
 | Project skeleton with secure configuration | Block 1 |
-| Reusable LLM client with retries | Block 2 |
+| First LLM call and reusable helper | Block 2 |
 | Structured extraction with validation | Block 3 |
-| Function calling workflow | Block 4 |
+| Function calling with one tool | Block 4 |
 | LLM-powered utility app | Block 5 |
 
 **Day 3 output: LLM-powered utility app**
@@ -183,10 +193,11 @@ flowchart LR
 
 By the end of Day 3, you can:
 
-1. Build a reliable, reusable client for LLM APIs
-2. Get structured, validated output from a model
-3. Use function calling to connect a model to your own code
-4. Integrate these pieces into a working application
+1. Make an LLM API call from Python and keep the API key out of code
+2. Read the response and token usage, and handle the most common failures
+3. Get structured, validated output from a model
+4. Let a model call one of your own functions
+5. Combine these pieces into a small working application
 
 ---
 
@@ -200,7 +211,7 @@ By the end of Day 3, you can:
 
 - Use only the provided synthetic or sanitized datasets
 - Keep API keys out of code and Git
-- Stay within free-tier limits
+- Stay within free-tier limits, or use a local open-weight model
 
 ## What Comes Next
 
