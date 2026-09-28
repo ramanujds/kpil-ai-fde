@@ -13,3 +13,9 @@ venv/
 # Editors
 .vscode/
 .idea/
+
+# Trainer-only / not for participants
+CLAUDE.md
+.claude/
+**/facilitator-prep.md
+**/*-facilitator-key.md
