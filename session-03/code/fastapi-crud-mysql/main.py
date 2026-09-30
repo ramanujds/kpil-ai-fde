@@ -1,16 +1,15 @@
 """
-Book Library API: a small CRUD REST API built with FastAPI.
+Book Library API: a small CRUD REST API built with FastAPI, backed by MySQL.
 
-CRUD maps onto HTTP methods:
-    Create -> POST    /books
-    Read   -> GET     /books         (list)   and   GET /books/{id}   (one)
-    Update -> PUT     /books/{id}    (replace everything)
-              PATCH   /books/{id}    (change some fields)
-    Delete -> DELETE  /books/{id}
+Same seven routes as the in-memory version (see session-03/code/fastapi-crud/),
+but every change is now written to a real MySQL database, so the data
+survives a server restart.
 
-Run (from this folder):
-    uv sync                    install the dependencies (first time only)
-    uv run fastapi dev         start the server with auto-reload
+Setup (from this folder):
+    Create the database once:   mysql -u root -p -e "CREATE DATABASE book_library"
+    Copy the env file:          cp .env.example .env      (edit if your MySQL user/password differ)
+    uv sync                     install the dependencies (first time only)
+    uv run fastapi dev          start the server; creates and seeds the table on first run
 
 Then open:
     http://127.0.0.1:8000/docs       Swagger UI  (try every endpoint in the browser)
@@ -18,26 +17,32 @@ Then open:
     http://127.0.0.1:8000/openapi.json   the machine-readable API description
 """
 
+from contextlib import asynccontextmanager
+
 from fastapi import FastAPI, HTTPException, Query, status
 
+from database import init_db
 from models import Book, BookCreate, BookUpdate
 from store import BookStore
 
-# ---------------------------------------------------------------
-# The app object
-# ---------------------------------------------------------------
-# title, description and version appear at the top of the Swagger page.
-# Every route is registered on this 'app' object with a decorator.
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Runs once, right before the app starts serving requests: make sure
+    # the table exists and has seed data, so GET has something to return.
+    init_db()
+    yield
+
+
 app = FastAPI(
-    title="Book Library API",
-    description="A small CRUD API. Data is kept in memory, so it resets when the server restarts.",
+    title="Book Library API (MySQL)",
+    description="The same CRUD API as the in-memory version, now backed by a MySQL database.",
     version="1.0.0",
+    lifespan=lifespan,
 )
 
-# One shared store for the whole app.
 store = BookStore()
 
-# Reused in several routes: how to describe a 404 in the docs.
 NOT_FOUND = {404: {"description": "Book not found"}}
 
 
@@ -45,7 +50,6 @@ def get_book_or_404(book_id: int) -> Book:
     """Fetch a book or stop the request with a 404 error."""
     book = store.get(book_id)
     if book is None:
-        # HTTPException turns into a JSON error: {"detail": "..."}
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Book {book_id} not found")
     return book
 
@@ -55,17 +59,12 @@ def get_book_or_404(book_id: int) -> Book:
 # ---------------------------------------------------------------
 @app.get("/health", tags=["System"], summary="Is the server up?")
 def health():
-    # A returned dict becomes JSON automatically.
     return {"status": "ok"}
 
 
 # ---------------------------------------------------------------
 # CREATE
 # ---------------------------------------------------------------
-# response_model=Book  -> the response is shaped (and documented) as a Book.
-# status_code=201      -> "Created", the right code when a new thing is made.
-# 'book: BookCreate' is the request body; FastAPI reads the JSON and
-# validates it against the model before this function even runs.
 @app.post(
     "/books",
     response_model=Book,
@@ -80,9 +79,6 @@ def create_book(book: BookCreate):
 # ---------------------------------------------------------------
 # READ (list)
 # ---------------------------------------------------------------
-# Parameters that are NOT in the URL path become QUERY parameters:
-#   GET /books?author=narayan&available=true&skip=0&limit=5
-# Query(...) adds rules and descriptions that show up in Swagger.
 @app.get(
     "/books",
     response_model=list[Book],
@@ -101,8 +97,6 @@ def list_books(
 # ---------------------------------------------------------------
 # READ (one)
 # ---------------------------------------------------------------
-# {book_id} in the path is a PATH parameter. The 'int' type hint makes
-# FastAPI convert it, and reject /books/abc with a 422 error.
 @app.get(
     "/books/{book_id}",
     response_model=Book,
@@ -117,7 +111,6 @@ def get_book(book_id: int):
 # ---------------------------------------------------------------
 # UPDATE (replace)
 # ---------------------------------------------------------------
-# PUT means "replace the whole thing", so the client sends every field.
 @app.put(
     "/books/{book_id}",
     response_model=Book,
@@ -133,7 +126,6 @@ def replace_book(book_id: int, book: BookCreate):
 # ---------------------------------------------------------------
 # UPDATE (partial)
 # ---------------------------------------------------------------
-# PATCH means "change only these fields". BookUpdate makes every field optional.
 @app.patch(
     "/books/{book_id}",
     response_model=Book,
@@ -149,7 +141,6 @@ def update_book(book_id: int, changes: BookUpdate):
 # ---------------------------------------------------------------
 # DELETE
 # ---------------------------------------------------------------
-# 204 "No Content": success, and there is nothing to send back.
 @app.delete(
     "/books/{book_id}",
     status_code=status.HTTP_204_NO_CONTENT,
@@ -160,5 +151,3 @@ def update_book(book_id: int, changes: BookUpdate):
 def delete_book(book_id: int):
     get_book_or_404(book_id)
     store.delete(book_id)
-
-
