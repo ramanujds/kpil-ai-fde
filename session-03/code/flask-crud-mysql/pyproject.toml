@@ -1,0 +1,11 @@
+[project]
+name = "flask-crud-mysql"
+version = "0.1.0"
+description = "Book library CRUD API with Flask, backed by MySQL running in Docker"
+requires-python = ">=3.10"
+dependencies = [
+    "flask>=3.0",
+    "pydantic>=2.0",
+    "mysql-connector-python>=9.0.0",
+    "python-dotenv>=1.0.1",
+]
