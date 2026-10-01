@@ -2,7 +2,7 @@
 
 **Day 3 | Block 1: Python for AI in Practice (HTTP basics, project structure)**
 
-How programs talk to each other over the web, and how to build your own service in Python. The runnable project lives in `session-03/code/fastapi-crud/`: a small book library API with create, read, update and delete, no database, and automatic Swagger documentation. It is set up with `uv`.
+How programs talk to each other over the web, and how to build your own service in Python. The runnable project lives in `session-03/code/solutions/fastapi-crud/`: a small book library API with create, read, update and delete, no database, and automatic Swagger documentation. It is set up with `uv`.
 
 ---
 
@@ -189,7 +189,7 @@ Then open `http://127.0.0.1:8000/docs` in a browser. Stop the server with Ctrl+C
 
 ## Explore It Yourself
 
-Open `session-03/code/fastapi-crud/`, start the server, and use Swagger at `/docs`.
+Open `session-03/code/solutions/fastapi-crud/`, start the server, and use Swagger at `/docs`.
 
 Try these in order:
 1. List the books, then filter by author and by availability.

@@ -2,7 +2,7 @@
 
 **Day 3 | Block 1: Python for AI in Practice (JSON handling, validation)**
 
-How to describe the shape of your data once, and let Python check it for you. Pydantic is the library FastAPI uses for every request and response. The runnable example is the set of models in `session-03/code/fastapi-crud/models.py`. Everything here refers to Pydantic version 2, the version that project installs.
+How to describe the shape of your data once, and let Python check it for you. Pydantic is the library FastAPI uses for every request and response. The runnable example is the set of models in `session-03/code/solutions/fastapi-crud/models.py`. Everything here refers to Pydantic version 2, the version that project installs.
 
 ---
 
@@ -245,7 +245,7 @@ A reply can be perfectly shaped and still wrong. Validation makes the output **s
 
 ## Explore It Yourself
 
-1. Open `session-03/code/fastapi-crud/models.py` and find the required, defaulted and optional fields.
+1. Open `session-03/code/solutions/fastapi-crud/models.py` and find the required, defaulted and optional fields.
 2. Start the API, open `/docs`, and send a book with an empty title, a year of 5000 and no author. Read every entry in the 422 response.
 3. Send the year as the text "1999" and see it accepted, then as "nineteen" and see it rejected.
 4. Send a PATCH with a single field, then a PUT with a single field, and compare what each does.

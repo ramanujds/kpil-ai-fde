@@ -19,3 +19,12 @@ CLAUDE.md
 .claude/
 **/facilitator-prep.md
 **/*-facilitator-key.md
+
+# Solutions: hidden until shared. Remove a line to share that solution.
+session-03/code/solutions/ai-and-python/
+session-03/code/solutions/fastapi-crud/
+session-03/code/solutions/fastapi-crud-mysql/
+session-03/code/solutions/python-essentials/
+session-03/code/solutions/simple-chat/
+session-03/code/solutions/simple-chat-fastapi/
+session-03/code/solutions/simple-chat-langchain/

@@ -2,7 +2,7 @@
 
 **Day 3 | Block 2: API Calls and Authentication**
 
-Before writing any code, see the whole journey: your Python program sends a request, a model somewhere produces text, and the answer comes back. The runnable code is in `session-03/code/ai-and-python/`, and every step below maps to a file there.
+Before writing any code, see the whole journey: your Python program sends a request, a model somewhere produces text, and the answer comes back. The runnable code is in `session-03/code/solutions/ai-and-python/`, and every step below maps to a file there.
 
 ---
 
@@ -193,7 +193,7 @@ Both code files turn these failures into short, readable messages instead of lon
 
 1. Check that Ollama is running and see which models you have with `ollama list`.
 2. Chat with a model directly with `ollama run llama3:8b` and ask it to explain an API. This is the same model the code will call.
-3. Open `session-03/code/ai-and-python/` and run `uv sync`.
+3. Open `session-03/code/solutions/ai-and-python/` and run `uv sync`.
 4. Run `01_raw_http_call.py`. Read the request body printed first, then the full JSON reply, and find the answer inside it.
 5. Run `02_sdk_call.py` and compare its output with the first run.
 6. Change the temperature to 1.5 and run again a few times to see the answers vary.

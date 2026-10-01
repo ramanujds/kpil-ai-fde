@@ -2,7 +2,7 @@
 
 **Day 3 | Block 1: Python for AI in Practice**
 
-The small set of Python building blocks used in almost every program. The runnable code lives in the project folder `session-03/code/python-essentials/`, one file per concept. These notes explain the idea; the file shows it.
+The small set of Python building blocks used in almost every program. The runnable code lives in the project folder `session-03/code/solutions/python-essentials/`, one file per concept. These notes explain the idea; the file shows it.
 
 ---
 
@@ -81,7 +81,7 @@ flowchart LR
 
 ## Explore It Yourself
 
-Open `session-03/code/python-essentials/01_lists.py` and run it. Every section has a comment explaining what it does.
+Open `session-03/code/solutions/python-essentials/01_lists.py` and run it. Every section has a comment explaining what it does.
 
 Then try:
 1. Change the slice so only the last fruit is shown.
@@ -128,7 +128,7 @@ flowchart LR
 
 ## Tuples: Explore It Yourself
 
-Open `session-03/code/python-essentials/02_tuples.py` and run it.
+Open `session-03/code/solutions/python-essentials/02_tuples.py` and run it.
 
 Then try:
 1. Unpack a date tuple `(day, month, year)` into three variables.
@@ -184,7 +184,7 @@ flowchart LR
 
 ## Dicts: Explore It Yourself
 
-Open `session-03/code/python-essentials/03_dicts.py` and run it.
+Open `session-03/code/solutions/python-essentials/03_dicts.py` and run it.
 
 Then try:
 1. Add a fourth item to the price list and print the new total.
@@ -235,7 +235,7 @@ flowchart LR
 
 ## Functions: Explore It Yourself
 
-Open `session-03/code/python-essentials/04_functions.py` and run it.
+Open `session-03/code/solutions/python-essentials/04_functions.py` and run it.
 
 Then try:
 1. Write a function that takes a price and a discount percentage and returns the final price, with a default discount of 10.
@@ -295,7 +295,7 @@ flowchart TB
 
 ## Classes: Explore It Yourself
 
-Open `session-03/code/python-essentials/05_classes_and_objects.py` and run it.
+Open `session-03/code/solutions/python-essentials/05_classes_and_objects.py` and run it.
 
 Then try:
 1. Add a `grade()` method to `Student` that returns "A" for 80 and above, "B" for 60 and above, and "C" otherwise.
@@ -346,7 +346,7 @@ flowchart TB
 
 ## Main Method: Explore It Yourself
 
-Open `session-03/code/python-essentials/06_main_method.py` and run it. Then run the helper on its own with `python area_tools.py` and compare the two outputs.
+Open `session-03/code/solutions/python-essentials/06_main_method.py` and run it. Then run the helper on its own with `python area_tools.py` and compare the two outputs.
 
 Then try:
 1. Run `06_main_method.py` with your own name as an argument.
@@ -398,7 +398,7 @@ flowchart LR
 
 ## NumPy: Explore It Yourself
 
-Open `session-03/code/python-essentials/07_numpy_basics.py` and run it.
+Open `session-03/code/solutions/python-essentials/07_numpy_basics.py` and run it.
 
 Then try:
 1. Convert a list of temperatures from Celsius to Fahrenheit in one line.
@@ -455,7 +455,7 @@ flowchart LR
 
 ## pandas: Explore It Yourself
 
-Open `session-03/code/python-essentials/08_pandas_basics.py` and run it.
+Open `session-03/code/solutions/python-essentials/08_pandas_basics.py` and run it.
 
 Then try:
 1. Add a student from a new city and see how the group averages change.
