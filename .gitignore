@@ -28,3 +28,12 @@ session-03/code/solutions/python-essentials/
 session-03/code/solutions/simple-chat/
 session-03/code/solutions/simple-chat-fastapi/
 session-03/code/solutions/simple-chat-langchain/
+
+# Session 4 solutions: code hidden, but each docs/ folder stays shared because the
+# walkthroughs need the policy documents. Remove both lines of an app to share it fully.
+session-04/code/solutions/hr-policy-qa/*
+!session-04/code/solutions/hr-policy-qa/docs/
+session-04/code/solutions/hr-policy-qa-llamaindex/*
+!session-04/code/solutions/hr-policy-qa-llamaindex/docs/
+session-04/code/solutions/hr-policy-qa-pgvector/*
+!session-04/code/solutions/hr-policy-qa-pgvector/docs/
