@@ -39,8 +39,11 @@ session-04/code/solutions/hr-policy-qa-llamaindex/*
 !session-04/code/solutions/hr-policy-qa-llamaindex/docs/
 session-04/code/solutions/hr-policy-qa-pgvector/*
 !session-04/code/solutions/hr-policy-qa-pgvector/docs/
+session-04/code/solutions/multi-format-rag-llamaindex/*
+!session-04/code/solutions/multi-format-rag-llamaindex/docs/
 
 # Session 5 solutions: hidden until shared. Remove a line to share that solution.
 session-05/code/solutions/simple-tool-calling/
 session-05/code/solutions/simple-tool-calling-langchain/
 session-05/code/solutions/structured-tool-calling/
+session-05/code/solutions/guardrails-and-approvals-langchain/
