@@ -87,7 +87,7 @@ AI: Your order 4821 has shipped and will arrive on Thursday.
 
 The output is the same as Step 5. With one tool there is nothing to see, which is the point:
 the behaviour did not change, but the loop no longer depends on there being only one tool.
-To see the benefit, do the experiment in the first exercise in Step 8 later: add a second
+To see the benefit, do the experiment in the first exercise in Step 11 later: add a second
 tool to the `tools` list and change nothing else.
 
 ## Checkpoint

@@ -1,11 +1,11 @@
 # Step 7 — Handle an Unknown Tool
 
-> Back to index · Previous: Look Up the Tool by Name · Next: Recap and Exercises
+> Back to index · Previous: Look Up the Tool by Name · Next: Keep a Conversation
 
 ## Goal
 
-Make the loop survive a tool name that is not in the dictionary, and finish the file so it
-matches the reference project.
+Make the loop survive a tool name that is not in the dictionary, and finish the single-question
+version of the program.
 
 ## Why this matters
 
@@ -66,7 +66,7 @@ messages = [HumanMessage("Update the order 4821 to Delivered, arrives Thursday")
 ```
 
 The project has one tool, and it can only read. This question asks for a change. That is a
-useful thing to run, and Exercise 1 in Step 8 gives the model a tool that fits it.
+useful thing to run, and Step 9 gives the model a tool that fits it.
 
 ## Try it
 
@@ -195,7 +195,8 @@ print("AI:", reply.content)
 
 </details>
 
-This matches `simple-tool-calling-langchain/tool_calling.py` in the reference project exactly.
+This is the finished single-question version. Step 8 turns it into the chat version that is
+`simple-tool-calling-langchain/tool_calling.py` in the reference project.
 
 ## Common Mistakes
 
@@ -207,4 +208,4 @@ This matches `simple-tool-calling-langchain/tool_calling.py` in the reference pr
 | A validation error building the `ToolMessage` | The result was not text and `str(...)` was left out | Wrap the result in `str(result)` |
 | The model keeps asking for the missing tool | Only the dictionary was emptied, so the model still has the tool bound | Expected for this test. The guard is what is being tested |
 
-Next: **Step 8 — Recap and Exercises**.
+Next: **Step 8 — Keep a Conversation**.

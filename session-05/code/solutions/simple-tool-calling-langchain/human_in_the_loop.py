@@ -8,37 +8,50 @@ load_dotenv()
 model = ChatOpenAI(model="llama3.1:8b", base_url="http://localhost:11434/v1",
     api_key="ollama")
 
-# A fake order table used by the tool.
+# A fake order table used by the tools.
 orders = {
     "4821": "Shipped, arrives Thursday",
     "4822": "Packed, ships tomorrow",
 }
 
 
-# The model never runs this, our code does. LangChain builds the tool description
-# from the name, the type hints and the docstring, so the docstring says when to use it.
 @tool
 def get_order_status(order_id: str) -> str:
-    """Look up the delivery status of an order. Use when the customer asks where their order is. Do not use for refunds."""
+    """Look up the delivery status of an order. Use when the customer asks where their order is."""
     return orders.get(order_id, f"No order found with number {order_id}. Check the number and try again.")
 
 
-tools = [get_order_status]
-model_with_tools = model.bind_tools(tools)
+@tool
+def cancel_order(order_id: str) -> str:
+    """Cancel an order. Use only when the customer clearly asks to cancel an order."""
+    if order_id not in orders:
+        return f"No order found with number {order_id}. Check the number and try again."
+    orders[order_id] = "Cancelled"
+    return f"Order {order_id} has been cancelled."
 
-# Name -> tool lookup, so the loop works for any tool added to the list above.
+
+tools = [get_order_status, cancel_order]
+model_with_tools = model.bind_tools(tools)
 tools_by_name = {t.name: t for t in tools}
 
-# The full history is sent on every call, so the model remembers earlier turns.
-# The system message tells it to answer directly when no tool fits.
+# Tools that change something need a human to say yes before they run.
+NEEDS_APPROVAL = {"cancel_order"}
+
 history = [
     SystemMessage(
         "You are a helpful assistant. Use a tool only when one clearly matches the request. "
         "For general questions, or requests no tool can do, answer directly in plain text "
         "from your own knowledge, or say politely what you cannot do. "
-        "Never mention functions or tools to the user."
+        "Never mention functions or tools to the user. "
+        "If a request is denied by the user, accept it and do not ask again."
     ),
 ]
+
+
+def approved_by_human(name, args):
+    answer = input(f"  Approval needed: {name}({args}). Allow? (y/n): ").strip().lower()
+    return answer in ("y", "yes")
+
 
 print("Chat started. Type 'exit' to quit.\n")
 
@@ -56,7 +69,6 @@ while True:
     history.append(HumanMessage(user_input))
     reply = model_with_tools.invoke(history)
 
-    # While the model asks for tools, run them and send the results back.
     while reply.tool_calls:
         history.append(reply)
 
@@ -65,8 +77,10 @@ while True:
 
             selected_tool = tools_by_name.get(call["name"])
             if selected_tool is None:
-                # The model can ask for a name we never gave it. Tell it, don't crash.
                 result = f"Unknown tool: {call['name']}"
+            elif call["name"] in NEEDS_APPROVAL and not approved_by_human(call["name"], call["args"]):
+                # The tool never runs. The model is told, so it can explain to the user.
+                result = "The user denied this action. It was not carried out."
             else:
                 result = selected_tool.invoke(call["args"])
             print(f"  [Tool returned: {result}]")
