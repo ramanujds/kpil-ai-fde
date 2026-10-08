@@ -17,20 +17,18 @@ curl http://localhost:11434/v1/chat/completions \
 
   ### Replace the localhost URL with your Ollama server URL if it's running on a different host or port.
 
-  ```powershell
-curl http://103.48.43.25:11434/v1/chat/completions `
-  -H "Content-Type: application/json" `
+  ```bash
+curl http://103.48.43.25:11434/v1/chat/completions \
+  -H "Content-Type: application/json" \
   -d '{
-    "model": "llama3:8b",
+    "model": "llama3.1",
     "messages": [
       {
         "role": "user",
         "content": "Why is the sky blue?"
       }
-    ],
-    "stream": false
+    ]
   }'
-
 
   ```
 
