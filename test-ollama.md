@@ -21,7 +21,7 @@ curl http://localhost:11434/v1/chat/completions \
 curl http://103.48.43.25:11434/v1/chat/completions \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "llama3.1",
+    "model": "llama3.1:8b",
     "messages": [
       {
         "role": "user",
@@ -36,11 +36,11 @@ curl http://103.48.43.25:11434/v1/chat/completions \
 
 ```python
 
-client = OpenAI(base_url="http://localhost:11434/v1",
+client = OpenAI(base_url="http://103.48.43.25:11434/v1",
     api_key="ollama")
 
 response = client.chat.completions.create(
-    model="llama3:8b",
+    model="llama3.1:8b",
     messages=[
         {
             "role": "user",
