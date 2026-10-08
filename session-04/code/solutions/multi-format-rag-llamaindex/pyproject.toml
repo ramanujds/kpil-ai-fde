@@ -1,0 +1,23 @@
+[project]
+name = "multi-format-rag-llamaindex"
+version = "0.1.0"
+description = "RAG over Markdown, PDF, Excel, Word and CSV files, with chunking chosen per file type and hybrid retrieval"
+requires-python = ">=3.10"
+dependencies = [
+    "chromadb>=1.0.0",
+    "llama-index-core>=0.12.0",
+    "llama-index-embeddings-openai>=0.3.0",
+    "llama-index-llms-openai>=0.3.0",
+    "llama-index-readers-file>=0.4.0",
+    "llama-index-retrievers-bm25>=0.5.0",
+    "llama-index-vector-stores-chroma>=0.4.0",
+    "openpyxl>=3.1.0",
+    "python-docx>=1.1.0",
+    "python-dotenv>=1.0.0",
+]
+
+[dependency-groups]
+# Only needed by make_sample_data.py, which writes the PDF, Excel and Word sample files.
+dev = [
+    "reportlab>=4.0.0",
+]

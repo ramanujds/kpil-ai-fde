@@ -1,0 +1,9 @@
+[project]
+name = "simple-chat-fastapi"
+version = "0.1.0"
+description = "The simple chat app as a FastAPI service with a one-page web UI"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi[standard]>=0.141.1",
+    "openai>=3.19.1",
+]

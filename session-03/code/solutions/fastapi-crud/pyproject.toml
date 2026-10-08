@@ -1,0 +1,8 @@
+[project]
+name = "fastapi-crud"
+version = "0.1.0"
+description = "Book library CRUD API with FastAPI, in-memory storage"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi[standard]>=0.141.1",
+]

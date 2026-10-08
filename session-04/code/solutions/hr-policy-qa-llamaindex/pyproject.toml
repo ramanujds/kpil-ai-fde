@@ -1,0 +1,13 @@
+[project]
+name = "hr-policy-qa-llamaindex"
+version = "0.1.0"
+description = "The HR policy RAG assistant, rebuilt with LlamaIndex"
+requires-python = ">=3.10"
+dependencies = [
+    "chromadb>=1.0.0",
+    "llama-index-core>=0.12.0",
+    "llama-index-embeddings-openai>=0.3.0",
+    "llama-index-llms-openai>=0.3.0",
+    "llama-index-vector-stores-chroma>=0.4.0",
+    "python-dotenv>=1.0.0",
+]

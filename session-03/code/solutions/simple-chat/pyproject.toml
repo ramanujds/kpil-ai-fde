@@ -1,0 +1,10 @@
+[project]
+name = "simple-chat"
+version = "0.1.0"
+description = "The most basic chat app: one question in, one answer out, no memory"
+requires-python = ">=3.10"
+dependencies = [
+    "ollama>=0.6.3",
+    "openai>=3.19.1",
+    "python-dotenv>=1.2.3",
+]

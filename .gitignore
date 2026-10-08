@@ -2,10 +2,13 @@
 __pycache__/
 *.pyc
 .venv/
+.chroma/
 venv/
 
 # Environment / secrets
 .env
+.env.*
+!.env.example
 
 # OS
 .DS_Store
@@ -19,31 +22,3 @@ CLAUDE.md
 .claude/
 **/facilitator-prep.md
 **/*-facilitator-key.md
-
-# Solutions: hidden until shared. Remove a line to share that solution.
-session-03/code/solutions/ai-and-python/
-session-03/code/solutions/fastapi-crud/
-session-03/code/solutions/fastapi-crud-mysql/
-session-03/code/solutions/python-essentials/
-session-03/code/solutions/simple-chat/
-session-03/code/solutions/simple-chat-fastapi/
-session-03/code/solutions/simple-chat-langchain/
-
-# Session 4 solutions: code hidden, but each docs/ folder stays shared because the
-# walkthroughs need the policy documents. Remove both lines of an app to share it fully.
-session-04/code/solutions/hr-policy-qa/*
-!session-04/code/solutions/hr-policy-qa/docs/
-session-04/code/solutions/hr-policy-qa-agentic/*
-!session-04/code/solutions/hr-policy-qa-agentic/docs/
-session-04/code/solutions/hr-policy-qa-llamaindex/*
-!session-04/code/solutions/hr-policy-qa-llamaindex/docs/
-session-04/code/solutions/hr-policy-qa-pgvector/*
-!session-04/code/solutions/hr-policy-qa-pgvector/docs/
-session-04/code/solutions/multi-format-rag-llamaindex/*
-!session-04/code/solutions/multi-format-rag-llamaindex/docs/
-
-# Session 5 solutions: hidden until shared. Remove a line to share that solution.
-session-05/code/solutions/simple-tool-calling/
-session-05/code/solutions/simple-tool-calling-langchain/
-session-05/code/solutions/structured-tool-calling/
-session-05/code/solutions/guardrails-and-approvals-langchain/

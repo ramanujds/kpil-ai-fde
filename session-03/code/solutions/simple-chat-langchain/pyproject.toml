@@ -1,0 +1,10 @@
+[project]
+name = "simple-chat-langchain"
+version = "0.1.0"
+description = "The simple chat app rebuilt with LangChain: basic, with history, and with OpenAI"
+requires-python = ">=3.10"
+dependencies = [
+    "langchain-ollama",
+    "langchain-openai",
+    "python-dotenv",
+]

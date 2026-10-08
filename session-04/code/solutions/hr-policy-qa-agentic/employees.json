@@ -1,0 +1,6 @@
+{
+  "E101": {"name": "Priya Nair", "role": "Software Engineer", "level": "Employee", "department": "Engineering", "joined": "2026-08-10"},
+  "E102": {"name": "Rahul Mehta", "role": "Business Analyst", "level": "Employee", "department": "Finance", "joined": "2024-02-05"},
+  "E103": {"name": "Meera Iyer", "role": "Engineering Manager", "level": "Manager", "department": "Engineering", "joined": "2021-06-01"},
+  "E104": {"name": "Arjun Shah", "role": "UX Designer", "level": "Employee", "department": "Design", "joined": "2026-03-02"}
+}
