@@ -17,6 +17,21 @@ curl http://localhost:11434/v1/chat/completions \
 
   ### Replace the localhost URL with your Ollama server URL if it's running on a different host or port.
 
+  ```bash
+curl http://103.48.43.25:11434/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "llama3:8b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Why is the sky blue?"
+      }
+    ]
+  }'
+
+  ```
+
 ## How to test Ollama with Python
 
 ```python
