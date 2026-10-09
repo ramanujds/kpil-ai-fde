@@ -29,8 +29,6 @@ SYSTEM = (
     "notice period, leave earned so far), call get_my_profile FIRST. Then search for the "
     "rule that applies to that situation. Never ask the user for facts the profile has.\n"
     "- For greetings and small talk, answer directly without any tool.\n"
-    "- You only answer company policy questions. For anything else, including general "
-    "knowledge, do not answer it.\n"
     "- Cite every fact as [Document > Section]. If the answer is not in the documents, "
     "say 'I could not find that in the policy documents.' Do not guess."
 )
@@ -42,6 +40,8 @@ retrieved = []
 # ---------------------------------------------------------------------------
 # The tools: ordinary Python functions the model is allowed to ask for.
 # ---------------------------------------------------------------------------
+
+
 def search_policies(query, document=None):
     embedding = client.embeddings.create(model="text-embedding-3-small", input=query).data[0].embedding
     result = collection.query(
@@ -121,7 +121,7 @@ def run_tool(call):
 # ---------------------------------------------------------------------------
 def run_agent(messages):
     for _ in range(MAX_STEPS):
-        reply = client.chat.completions.create(model="gpt-4o-mini", messages=messages, tools=TOOLS).choices[0].message
+        reply = client.chat.completions.create(model="gpt-4o", messages=messages, tools=TOOLS).choices[0].message
         messages.append(reply)
 
         if not reply.tool_calls:  # no tool requested: this is the final answer

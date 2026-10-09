@@ -5,7 +5,7 @@ from langchain_openai import ChatOpenAI
 
 load_dotenv()
 
-model = ChatOpenAI(model="llama3.1:8b", base_url="http://localhost:11434/v1",
+model = ChatOpenAI(model="docker.io/ai/gemma4:E4B", base_url="http://localhost:12434/v1",
     api_key="ollama")
 
 # A fake order table used by the tool.
