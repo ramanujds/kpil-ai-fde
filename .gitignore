@@ -22,3 +22,6 @@ CLAUDE.md
 .claude/
 **/facilitator-prep.md
 **/*-facilitator-key.md
+
+# Solutions kept off main (walkthrough only)
+session-06/code/solutions/smart-qa-assistant/
