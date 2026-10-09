@@ -1,8 +1,0 @@
-[
-  {"question": "How many days of paid leave do I get each year?", "answer": "You get 18 days of paid leave per year, credited on 1 January.", "source": "leave_policy.md > Paid Leave Entitlement"},
-  {"question": "How do I apply for leave?", "answer": "Raise the request in the HR portal. Your reporting manager approves it. Up to 2 days needs 2 working days of notice; 3 or more days needs 7 days of notice.", "source": "leave_policy.md > How to Apply for Leave"},
-  {"question": "How do I reset my VPN password?", "answer": "Open the VPN app, choose Forgot Password, and use the reset link sent to your work email. The link works for 15 minutes.", "source": "it_support_guide.md > Resetting Your VPN"},
-  {"question": "How long do I have to submit an expense claim?", "answer": "Submit within 30 days of the expense. Older claims need the Finance head's written approval. Receipts are needed for claims over 200.", "source": "expense_handbook.md > Receipts and Deadlines"},
-  {"question": "What are the password rules?", "answer": "At least 12 characters, changed every 90 days. Never share your password with anyone, including IT.", "source": "it_support_guide.md > Password Rules"},
-  {"question": "How do I report a suspicious email?", "answer": "Do not click anything. Forward the email to the security mailbox and delete it from your inbox.", "source": "it_support_guide.md > Reporting a Suspicious Email"}
-]
